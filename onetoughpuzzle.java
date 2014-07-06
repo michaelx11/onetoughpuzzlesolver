@@ -11,10 +11,11 @@ import java.io.*;
  *
  *
  * Standard configuration: 
- *
- *      out
- *  out     in
- *      in
+ *        0
+ *        out
+ *  3 out     in 1
+ *        in
+ *        2
  *
  * Number your pieces and input them.
  */
@@ -76,7 +77,7 @@ class Piece {
   }
 
   private Joint getJointWithRotation(int initial) {
-    int mod = (initial + rotation) % 4;
+    int mod = (initial - rotation + 4) % 4;
     return joints[mod];
   }
 
